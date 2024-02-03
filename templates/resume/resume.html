@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Christopher Helms - a linux administrator - Linux man page</title>
+  <link rel="stylesheet" href="{% static 'resume/style.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'personal-website/favicon.ico' %}">
+</head>
+<body>
+
+<pre class="manheader">CHRISTOPHER HELMS                      Linux User's Manual                      CHRISTOPHER HELMS(8)</pre>
+<h1>NAME</h1>
+<p class="subtext">
+  CHRISTOPHER HELMS - Systems Engineer
+</p>
+
+<h1>SYNOPSIS</h1>
+<p class="subtext">
+  chris [--linux-admin] [--cloud-systems] [--ci/cd] [--configuration-management]
+
+</p>
+
+<h1>SUMMARY</h1>
+<p class="subtext">
+    Red Hat certified Linux administrator with experience in Red Hat, Debian, Ansible, and Git. 
+    Working toward furthering my experience in automation and visibility. Looking to increase my experience in large 
+    enterprise environments and further myself toward DevOps and SRE positions.</p>
+<h1>OPTIONS</h1>
+<p class="subtext">
+  --linux-admin
+</p>
+<p class="doublesubtext">
+  Experience primary in Debian and Red Hat based systems, able to administer to standalone servers, clusters, 
+  or large environments using Ansible. Comfortable with delivering services running natively on the OS, or through 
+  a containerized environment. Also proficient in Linux networking, experienced in using VLAN and bridged interfaces 
+  as well as various Docker network types.
+</p>
+<p class="subtext">
+  --cloud-systems
+</p>
+<p class="doublesubtext">
+  Simple AWS services usage, such as VPC for network segmentation and site-to-site VPN tunnels, deploying and managing EC3 instances, 
+  and creating/deploying containers to ECR.
+</p>
+<p class="subtext">
+  --ci/cd
+</p>
+<p class="doublesubtext">
+  Set up Gitlab pipelines to package and deploy updated code upon merge, as well as utilize Jenkins to rapidly build out and deploy 
+  hundreds of on-site edge compute servers per month.
+</p>
+<p class="subtext">
+  --configuration-management
+</p>
+<p class="doublesubtext">
+  Experience troubleshooting and managing Puppet environments, as well as writing Ansible to configure personal homelab systems.
+</p>
+
+<h1>EXPERIENCE</h1>
+{% for experience in experiences %}
+<p class="subtext">
+  {{experience.title}}
+</p>
+<p class="subtext">
+  {{experience.company}} &nbsp;&nbsp;&nbsp; {{experience.location}}
+  <span style="float:right;">
+    {{experience.start_date}} - {{experience.end_date}} &nbsp;&nbsp;&nbsp;
+  </span>
+</p>
+<p class="doublesubtext">
+    {{experience.description}}
+</p>
+{% endfor %}
+
+<h1>CERTIFICATIONS</h1>
+{% for certification in certifications %}
+<p class="subtext">
+  {{certification.institution}} {{certification.name}}
+  <span style="float:right;">
+    {{certification.date_achieved}} &nbsp;&nbsp;&nbsp;
+  </span>
+</p>
+{% endfor %}
+
+<h1>EDUCATION</h1>
+{% for degree in education %}
+<p class="subtext">
+  {{degree.university}} &nbsp; {{degree.degree_field}}
+  <span style="float:right;">
+    {{degree.end_date}} &nbsp;&nbsp;&nbsp;
+  </span>
+</p>
+{% endfor %}
+
+<h1>SKILLS</h1>
+{% for skill in skills %}
+<p class="subtext">
+  * {{skill.name}}
+</p>
+{% endfor %}
+
+
+<h1>SEE ALSO</h1>
+<ul class="subtext">
+  <li>* E-mail:      cjohnhelms@gmail.com</li>
+  <li>* Github:     <a href="http://github.com/cjohnhelms">http://github.com/cjohnhelms</a></li>
+  <li>* LinkedIn:	 <a href="http://br.linkedin.com/in/christopher-j-helms/">http://br.linkedin.com/in/christopher-j-helms</a></li>
+</ul>
+
+<p></p>
+
+<br><br>
+<pre class="manheader">Christopher Helms                         <script>document.write( new Date().toLocaleDateString() );</script>                                  HELMS
+</pre>
+
+<br>
+<p class="footer">
+  © <script>document.write( new Date().getFullYear() );</script> Christopher Helms
+</p>
+
+</body>
+</html>
